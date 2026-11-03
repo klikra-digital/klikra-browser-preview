@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#102d2a">
-<title>KLIKRA Browser — UI Build 004</title>
+<title>KLIKRA Browser — UI Build 005</title>
 <style>
 :root{color-scheme:dark;--ink:#17231f;--paper:#f3f5f0;--muted:#aebdb4;--lime:#c5e84f;--deep:#09201d;--line:#527064}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0a201d;color:#f3f6f0}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
@@ -40,6 +40,19 @@ main{padding:0 15px}.view{display:none}.view.active{display:block}
 #view-menu .item-action{background:#e8eee8;border:1px solid #d4ddd4;color:#20352b}
 #view-menu .menu-close{flex:none;border:0;border-radius:50%;width:38px;height:38px;background:#e5ebe4;color:#17231f;font-size:22px}
 @media(min-width:600px){#view-menu.view.active{left:50%;right:auto;width:min(440px,90vw);transform:translateX(-50%);top:8svh;bottom:100px}}
+
+/* Build 005: typography-only refinement against the approved menu and tab mockups */
+#view-menu .page-title h1{font-size:20px}
+#view-menu .page-title p{font-size:10px}
+#view-menu .item-info strong{font-size:12px}
+#view-menu .item-info small{font-size:9px}
+#view-menu .item-action{font-size:10px}
+#view-tabs .page-title h1{font-size:23px}
+#view-tabs .page-title p{font-size:11px}
+#view-tabs .item-info strong{font-size:11px}
+#view-tabs .item-info small{font-size:9px}
+#view-tabs .item-action{font-size:10px}
+#view-tabs #addTab{font-size:10px}
 </style>
 </head>
 <body>
