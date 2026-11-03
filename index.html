@@ -71,7 +71,7 @@ main{padding:0 15px}.view{display:none}.view.active{display:block}
 </nav>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
-const $=s=>document.querySelector(s),key='klikra-browser-ui003';let bookmarks=[],historyItems=[],tabs=[{id:1,url:'',title:'Tab baru'}],activeTab=1,nextId=2;
+const $=s=>document.querySelector(s),key='klikra-browser-ui002';let bookmarks=[],historyItems=[],tabs=[{id:1,url:'',title:'Tab baru'}],activeTab=1,nextId=2;
 try{bookmarks=JSON.parse(localStorage.getItem(key+':bookmarks')||'[]');historyItems=JSON.parse(localStorage.getItem(key+':history')||'[]')}catch(e){}
 function persist(){try{localStorage.setItem(key+':bookmarks',JSON.stringify(bookmarks));localStorage.setItem(key+':history',JSON.stringify(historyItems))}catch(e){say('Penyimpanan lokal tidak tersedia.')}}
 function say(s){const t=$('#toast');t.textContent=s;t.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove('show'),2200)}
