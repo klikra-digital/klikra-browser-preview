@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#102d2a">
-<title>KLIKRA Browser — UI Build 007</title>
+<title>KLIKRA Browser — UI Build 008</title>
 <style>
 :root{color-scheme:dark;--ink:#17231f;--paper:#f3f5f0;--muted:#aebdb4;--lime:#c5e84f;--deep:#09201d;--line:#527064}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0a201d;color:#f3f6f0}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
@@ -110,6 +110,71 @@ body[data-ui-font="large"] #view-tabs .item-action{font-size:12px}
 body[data-ui-font="small"] #view-tabs #addTab{font-size:9px}
 body[data-ui-font="normal"] #view-tabs #addTab{font-size:10px}
 body[data-ui-font="large"] #view-tabs #addTab{font-size:12px}
+
+/* Build 008: global typography preference across every browser view */
+body[data-ui-font="small"] .page-title h1{font-size:22px}
+body[data-ui-font="normal"] .page-title h1{font-size:25px}
+body[data-ui-font="large"] .page-title h1{font-size:29px}
+body[data-ui-font="small"] .page-title p{font-size:10px}
+body[data-ui-font="normal"] .page-title p{font-size:12px}
+body[data-ui-font="large"] .page-title p{font-size:14px}
+body[data-ui-font="small"] .item-info strong{font-size:11px}
+body[data-ui-font="normal"] .item-info strong{font-size:13px}
+body[data-ui-font="large"] .item-info strong{font-size:15px}
+body[data-ui-font="small"] .item-info small{font-size:9px}
+body[data-ui-font="normal"] .item-info small{font-size:10px}
+body[data-ui-font="large"] .item-info small{font-size:12px}
+body[data-ui-font="small"] .item-action,body[data-ui-font="small"] .chip{font-size:9px}
+body[data-ui-font="normal"] .item-action,body[data-ui-font="normal"] .chip{font-size:11px}
+body[data-ui-font="large"] .item-action,body[data-ui-font="large"] .chip{font-size:13px}
+body[data-ui-font="small"] .search{font-size:10px}
+body[data-ui-font="normal"] .search{font-size:12px}
+body[data-ui-font="large"] .search{font-size:14px}
+body[data-ui-font="small"] .empty{font-size:10px}
+body[data-ui-font="normal"] .empty{font-size:12px}
+body[data-ui-font="large"] .empty{font-size:14px}
+body[data-ui-font="small"] .active-section h2{font-size:13px}
+body[data-ui-font="normal"] .active-section h2{font-size:15px}
+body[data-ui-font="large"] .active-section h2{font-size:17px}
+body[data-ui-font="small"] .feature strong{font-size:14px}
+body[data-ui-font="normal"] .feature strong{font-size:16px}
+body[data-ui-font="large"] .feature strong{font-size:18px}
+body[data-ui-font="small"] .feature p{font-size:11px}
+body[data-ui-font="normal"] .feature p{font-size:13px}
+body[data-ui-font="large"] .feature p{font-size:15px}
+body[data-ui-font="small"] .address input{font-size:13px}
+body[data-ui-font="normal"] .address input{font-size:15px}
+body[data-ui-font="large"] .address input{font-size:17px}
+body[data-ui-font="small"] .shortcut span{font-size:11px}
+body[data-ui-font="normal"] .shortcut span{font-size:12px}
+body[data-ui-font="large"] .shortcut span{font-size:14px}
+body[data-ui-font="small"] .browser-controls .tab-count{font-size:14px}
+body[data-ui-font="normal"] .browser-controls .tab-count{font-size:16px}
+body[data-ui-font="large"] .browser-controls .tab-count{font-size:18px}
+body[data-ui-font="small"] #view-menu .page-title h1{font-size:18px}
+body[data-ui-font="normal"] #view-menu .page-title h1{font-size:20px}
+body[data-ui-font="large"] #view-menu .page-title h1{font-size:23px}
+body[data-ui-font="small"] #view-menu .page-title p{font-size:9px}
+body[data-ui-font="normal"] #view-menu .page-title p{font-size:10px}
+body[data-ui-font="large"] #view-menu .page-title p{font-size:12px}
+body[data-ui-font="small"] #view-menu .item-info strong{font-size:11px}
+body[data-ui-font="normal"] #view-menu .item-info strong{font-size:13px}
+body[data-ui-font="large"] #view-menu .item-info strong{font-size:15px}
+body[data-ui-font="small"] #view-menu .item-info small{font-size:8px}
+body[data-ui-font="normal"] #view-menu .item-info small{font-size:10px}
+body[data-ui-font="large"] #view-menu .item-info small{font-size:12px}
+body[data-ui-font="small"] #view-menu .item-action{font-size:9px}
+body[data-ui-font="normal"] #view-menu .item-action{font-size:11px}
+body[data-ui-font="large"] #view-menu .item-action{font-size:13px}
+body[data-ui-font="small"] #view-tabs .page-title h1{font-size:21px}
+body[data-ui-font="normal"] #view-tabs .page-title h1{font-size:23px}
+body[data-ui-font="large"] #view-tabs .page-title h1{font-size:26px}
+body[data-ui-font="small"] #view-tabs .item-info strong{font-size:10px}
+body[data-ui-font="normal"] #view-tabs .item-info strong{font-size:11px}
+body[data-ui-font="large"] #view-tabs .item-info strong{font-size:13px}
+body[data-ui-font="small"] #view-tabs .item-info small{font-size:8px}
+body[data-ui-font="normal"] #view-tabs .item-info small{font-size:9px}
+body[data-ui-font="large"] #view-tabs .item-info small{font-size:11px}
 </style>
 </head>
 <body>
