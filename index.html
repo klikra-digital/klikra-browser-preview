@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#102d2a">
-<title>KLIKRA Browser — UI Build 005</title>
+<title>KLIKRA Browser — UI Build 006</title>
 <style>
 :root{color-scheme:dark;--ink:#17231f;--paper:#f3f5f0;--muted:#aebdb4;--lime:#c5e84f;--deep:#09201d;--line:#527064}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0a201d;color:#f3f6f0}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
@@ -53,6 +53,26 @@ main{padding:0 15px}.view{display:none}.view.active{display:block}
 #view-tabs .item-info small{font-size:9px}
 #view-tabs .item-action{font-size:10px}
 #view-tabs #addTab{font-size:10px}
+
+/* Build 006: user-controlled interface typography */
+:root{--ui-font-scale:1}
+body{font-size:calc(14px * var(--ui-font-scale))}
+body[data-ui-font="small"]{--ui-font-scale:.92}
+body[data-ui-font="normal"]{--ui-font-scale:1}
+body[data-ui-font="large"]{--ui-font-scale:1.12}
+body[data-ui-font="small"] .page-title h1{font-size:23px}
+body[data-ui-font="large"] .page-title h1{font-size:28px}
+body[data-ui-font="small"] .item-info strong{font-size:11px}
+body[data-ui-font="large"] .item-info strong{font-size:15px}
+body[data-ui-font="small"] .item-info small{font-size:9px}
+body[data-ui-font="large"] .item-info small{font-size:12px}
+body[data-ui-font="small"] .shortcut span{font-size:11px}
+body[data-ui-font="large"] .shortcut span{font-size:14px}
+.settings-options{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.settings-option{padding:12px 6px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--text);font-weight:700}
+.settings-option[aria-pressed="true"]{border-color:var(--accent);background:#a7e22e22;box-shadow:inset 0 0 0 1px var(--accent)}
+.settings-preview{padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--surface);margin-top:12px}
+.settings-note{font-size:12px;color:var(--muted);line-height:1.5}
 </style>
 </head>
 <body>
@@ -78,14 +98,15 @@ main{padding:0 15px}.view{display:none}.view.active{display:block}
 <section id="view-koleksi" class="view"><div class="page-title"><h1>Koleksi</h1><p>Bookmark yang kamu simpan.</p></div><input class="search" id="bookmarkSearch" placeholder="Cari bookmark..." aria-label="Cari bookmark"><div class="panel" id="bookmarkList"><div class="empty">Belum ada bookmark tersimpan.</div></div></section>
 <section id="view-riwayat" class="view"><div class="page-title"><h1>Riwayat</h1><p>Jejak halaman yang dibuka pada prototype.</p></div><div class="row" style="justify-content:space-between"><strong>Terakhir dibuka</strong><button class="item-action" id="clearHistory">Hapus riwayat</button></div><div class="panel" id="historyList"><div class="empty">Belum ada riwayat.</div></div></section>
 <section id="view-tabs" class="view"><div class="page-title"><h1>Tab</h1><p>Kelola halaman yang sedang terbuka.</p></div><div class="panel" id="tabsList"></div><button class="item-action" id="addTab" style="margin-top:12px">＋ Tab Baru</button></section>
-<section id="view-menu" class="view"><div class="page-title"><div><h1>Menu Cepat</h1><p>Kontrol browser</p></div><button class="menu-close" id="closeMenu" aria-label="Tutup menu">×</button></div><div class="panel">
+<section id="view-settings" class="view"><div class="page-title"><h1>Pengaturan</h1><p>Atur kenyamanan KLIKRA Browser.</p></div><div class="panel"><div class="row"><div class="item-icon">Aa</div><div class="item-info"><strong>Ukuran Font Antarmuka</strong><small>Pilih ukuran teks menu dan navigasi.</small></div></div><div class="settings-options" role="group" aria-label="Ukuran font antarmuka"><button class="settings-option" data-font="small" aria-pressed="false">Kecil</button><button class="settings-option" data-font="normal" aria-pressed="true">Normal</button><button class="settings-option" data-font="large" aria-pressed="false">Besar</button></div><div class="settings-preview"><strong id="fontPreviewTitle">Pratinjau teks</strong><p id="fontPreviewBody">Jelajahi dengan ukuran tulisan yang nyaman dibaca.</p></div><p class="settings-note">Pilihan ini mengatur antarmuka browser, bukan ukuran teks situs web. Pengaturan tersimpan pada browser perangkat ini.</p></div><button class="item-action" id="settingsBack" style="margin-top:12px">← Kembali ke Menu Cepat</button></section>
+ <section id="view-menu" class="view"><div class="page-title"><div><h1>Menu Cepat</h1><p>Kontrol browser</p></div><button class="menu-close" id="closeMenu" aria-label="Tutup menu">×</button></div><div class="panel">
 <div class="row"><div class="item-icon">＋</div><div class="item-info"><strong>Tab Baru</strong></div><button class="item-action" data-menu="newtab">Buka</button></div>
 <div class="row"><div class="item-icon">◉</div><div class="item-info"><strong>Tab Samaran</strong><small>Demo tampilan — belum ada mode privat terisolasi</small></div></div>
 <div class="row"><div class="item-icon">◷</div><div class="item-info"><strong>Riwayat</strong></div><button class="item-action" data-menu="history">Buka</button></div>
 <div class="row"><div class="item-icon">⇩</div><div class="item-info"><strong>Unduhan</strong><small>Belum tersedia pada prototype web</small></div></div>
 <div class="row"><div class="item-icon">♧</div><div class="item-info"><strong>Koleksi / Bookmark</strong></div><button class="item-action" data-menu="koleksi">Buka</button></div>
 <div class="row"><div class="item-icon">☆</div><div class="item-info"><strong>Situs Favorit</strong></div></div>
-<div class="row"><div class="item-icon">⚙</div><div class="item-info"><strong>Setelan</strong><small>Belum tersedia</small></div></div>
+<div class="row"><div class="item-icon">⚙</div><div class="item-info"><strong>Setelan</strong><small>Atur tampilan dan kenyamanan.</small></div><button class="item-action" data-menu="settings">Buka</button></div>
 <div class="row"><div class="item-icon">?</div><div class="item-info"><strong>Bantuan</strong></div></div>
 <div class="row"><div class="item-icon">ⓘ</div><div class="item-info"><strong>Tentang KLIKRA Browser</strong></div></div>
 </div></section>
@@ -109,7 +130,8 @@ function view(v){document.querySelectorAll('.view').forEach(x=>x.classList.toggl
 document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>view(b.dataset.go)));
 function resolve(s){s=s.trim();if(!s)return '';if(/^https?:\/\//i.test(s))return s;if(/^([\w-]+\.)+[a-z]{2,}([/:?#].*)?$/i.test(s))return 'https://'+s;return 'https://www.google.com/search?q='+encodeURIComponent(s)}
 function navigate(){const raw=$('#addressInput').value.trim(),url=resolve(raw);if(!url){say('Masukkan alamat atau kata pencarian.');return}const t=cur();t.url=url;t.title=raw;historyItems.unshift({url,title:raw,time:new Date().toLocaleString('id-ID')});historyItems=historyItems.slice(0,100);persist();renderActive();$('#addressInput').value='';say('Alamat dicatat. Situs belum dimuat di dalam prototype.')}
-function renderActive(){const t=cur();$('#tabBadge').textContent=tabs.length;$('#tabCountControl').textContent=tabs.length;$('#activePage').innerHTML=t.url?'<div class="row"><div class="item-icon">◎</div><div class="item-info"><strong>'+esc(t.title||t.url)+'</strong><small>'+esc(t.url)+'</small></div><button class="item-action" id="openExternal">Buka ↗</button><button class="item-action" id="saveActive">☆</button></div><p class="empty">Prototype belum memuat situs di dalam aplikasi. Buka meneruskan alamat ke browser perangkat.</p>':'<div class="empty">Belum ada halaman yang dibuka.</div>';$('#openExternal')?.addEventListener('click',()=>window.open(t.url,'_blank','noopener'));$('#saveActive')?.addEventListener('click',saveCurrent)}
+let uiFont='normal';try{uiFont=localStorage.getItem(key+':uiFont')||'normal'}catch(e){}function applyFont(){document.body.dataset.uiFont=uiFont;document.querySelectorAll('[data-font]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.font===uiFont)))}function chooseFont(v){if(!['small','normal','large'].includes(v))return;uiFont=v;try{localStorage.setItem(key+':uiFont',uiFont)}catch(e){say('Pengaturan tidak dapat disimpan pada perangkat ini.')}applyFont();say('Ukuran font diperbarui.')}document.querySelectorAll('[data-font]').forEach(b=>b.addEventListener('click',()=>chooseFont(b.dataset.font)));$('#settingsBack').addEventListener('click',()=>view('menu'));applyFont();
+ function renderActive(){const t=cur();$('#tabBadge').textContent=tabs.length;$('#tabCountControl').textContent=tabs.length;$('#activePage').innerHTML=t.url?'<div class="row"><div class="item-icon">◎</div><div class="item-info"><strong>'+esc(t.title||t.url)+'</strong><small>'+esc(t.url)+'</small></div><button class="item-action" id="openExternal">Buka ↗</button><button class="item-action" id="saveActive">☆</button></div><p class="empty">Prototype belum memuat situs di dalam aplikasi. Buka meneruskan alamat ke browser perangkat.</p>':'<div class="empty">Belum ada halaman yang dibuka.</div>';$('#openExternal')?.addEventListener('click',()=>window.open(t.url,'_blank','noopener'));$('#saveActive')?.addEventListener('click',saveCurrent)}
 function saveCurrent(){const t=cur();if(!t.url){say('Belum ada halaman untuk disimpan.');return}if(bookmarks.some(b=>b.url===t.url)){say('Bookmark sudah tersimpan.');return}bookmarks.unshift({url:t.url,title:t.title||t.url});persist();renderBookmarks();say('Bookmark tersimpan.')}
 function renderBookmarks(){const q=($('#bookmarkSearch')?.value||'').toLowerCase(),items=bookmarks.filter(b=>(b.title+' '+b.url).toLowerCase().includes(q));$('#bookmarkList').innerHTML=items.length?items.map((b,i)=>'<div class="row"><div class="item-icon">♧</div><div class="item-info"><strong>'+esc(b.title)+'</strong><small>'+esc(b.url)+'</small></div><button class="item-action" data-open="'+i+'">Buka</button><button class="item-action" data-del="'+i+'">Hapus</button></div>').join(''):'<div class="empty">Belum ada bookmark yang cocok.</div>';$('#bookmarkList').querySelectorAll('[data-open]').forEach(x=>x.addEventListener('click',()=>openSaved(items[+x.dataset.open])));$('#bookmarkList').querySelectorAll('[data-del]').forEach(x=>x.addEventListener('click',()=>{const b=items[+x.dataset.del];bookmarks=bookmarks.filter(y=>y.url!==b.url);persist();renderBookmarks();say('Bookmark dihapus.')}))}
 function openSaved(b){const t=cur();t.url=b.url;t.title=b.title;historyItems.unshift({url:b.url,title:b.title,time:new Date().toLocaleString('id-ID')});persist();renderActive();view('jelajah');say('Bookmark dibuka di sesi prototype.')}
