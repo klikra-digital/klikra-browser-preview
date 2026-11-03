@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#102d2a">
-<title>KLIKRA Browser — UI Build 006</title>
+<title>KLIKRA Browser — UI Build 007</title>
 <style>
 :root{color-scheme:dark;--ink:#17231f;--paper:#f3f5f0;--muted:#aebdb4;--lime:#c5e84f;--deep:#09201d;--line:#527064}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0a201d;color:#f3f6f0}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
@@ -73,6 +73,43 @@ body[data-ui-font="large"] .shortcut span{font-size:14px}
 .settings-option[aria-pressed="true"]{border-color:var(--accent);background:#a7e22e22;box-shadow:inset 0 0 0 1px var(--accent)}
 .settings-preview{padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--surface);margin-top:12px}
 .settings-note{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* Build 007: integrate typography preference across Quick Menu and Tabs */
+body[data-ui-font="small"] #view-menu .page-title h1{font-size:18px}
+body[data-ui-font="normal"] #view-menu .page-title h1{font-size:20px}
+body[data-ui-font="large"] #view-menu .page-title h1{font-size:23px}
+body[data-ui-font="small"] #view-menu .page-title p{font-size:9px}
+body[data-ui-font="normal"] #view-menu .page-title p{font-size:10px}
+body[data-ui-font="large"] #view-menu .page-title p{font-size:12px}
+body[data-ui-font="small"] #view-menu .item-info strong{font-size:11px}
+body[data-ui-font="normal"] #view-menu .item-info strong{font-size:12px}
+body[data-ui-font="large"] #view-menu .item-info strong{font-size:14px}
+body[data-ui-font="small"] #view-menu .item-info small{font-size:8px}
+body[data-ui-font="normal"] #view-menu .item-info small{font-size:9px}
+body[data-ui-font="large"] #view-menu .item-info small{font-size:11px}
+body[data-ui-font="small"] #view-menu .item-action{font-size:9px}
+body[data-ui-font="normal"] #view-menu .item-action{font-size:10px}
+body[data-ui-font="large"] #view-menu .item-action{font-size:12px}
+body[data-ui-font="small"] #view-menu .menu-close{font-size:20px}
+body[data-ui-font="large"] #view-menu .menu-close{font-size:25px}
+body[data-ui-font="small"] #view-tabs .page-title h1{font-size:21px}
+body[data-ui-font="normal"] #view-tabs .page-title h1{font-size:23px}
+body[data-ui-font="large"] #view-tabs .page-title h1{font-size:26px}
+body[data-ui-font="small"] #view-tabs .page-title p{font-size:10px}
+body[data-ui-font="normal"] #view-tabs .page-title p{font-size:11px}
+body[data-ui-font="large"] #view-tabs .page-title p{font-size:13px}
+body[data-ui-font="small"] #view-tabs .item-info strong{font-size:10px}
+body[data-ui-font="normal"] #view-tabs .item-info strong{font-size:11px}
+body[data-ui-font="large"] #view-tabs .item-info strong{font-size:13px}
+body[data-ui-font="small"] #view-tabs .item-info small{font-size:8px}
+body[data-ui-font="normal"] #view-tabs .item-info small{font-size:9px}
+body[data-ui-font="large"] #view-tabs .item-info small{font-size:11px}
+body[data-ui-font="small"] #view-tabs .item-action{font-size:9px}
+body[data-ui-font="normal"] #view-tabs .item-action{font-size:10px}
+body[data-ui-font="large"] #view-tabs .item-action{font-size:12px}
+body[data-ui-font="small"] #view-tabs #addTab{font-size:9px}
+body[data-ui-font="normal"] #view-tabs #addTab{font-size:10px}
+body[data-ui-font="large"] #view-tabs #addTab{font-size:12px}
 </style>
 </head>
 <body>
