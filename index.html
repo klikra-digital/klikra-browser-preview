@@ -175,6 +175,70 @@ body[data-ui-font="large"] #view-tabs .item-info strong{font-size:13px}
 body[data-ui-font="small"] #view-tabs .item-info small{font-size:8px}
 body[data-ui-font="normal"] #view-tabs .item-info small{font-size:9px}
 body[data-ui-font="large"] #view-tabs .item-info small{font-size:11px}
+
+/* Build 009 — Light / Dark appearance system and refined card language */
+:root{--surface:#122e29;--text:#f3f6f0;--muted:#aebdb4;--line:#31544b;--accent:#c5e84f}
+body[data-theme="light"]{color-scheme:light;background:#fff;color:#202820}
+body[data-theme="light"] .app{background:#fff}
+body[data-theme="light"] .top{background:#fff;color:#202820}
+body[data-theme="light"] .top button{background:#f5f7f8;color:#202820;border-color:#e1e6e3}
+body[data-theme="light"] .brandmark{border-color:#a7e22e;color:#63851c}
+body[data-theme="light"] .home-hero{background:linear-gradient(145deg,#fff 0%,#f5f7f8 62%,#edf4e8 100%);box-shadow:0 16px 42px rgba(32,40,32,.06)}
+body[data-theme="light"] .skyglow,body[data-theme="light"] .mountain,body[data-theme="light"] .foliage{display:none}
+body[data-theme="light"] .hero-brand{text-shadow:none;color:#202820}
+body[data-theme="light"] .hero-leaf{box-shadow:0 5px 16px rgba(60,90,35,.15)}
+body[data-theme="light"] .address{background:#fff;color:#202820;border-color:#e1e6e3;box-shadow:0 8px 24px rgba(32,40,32,.07)}
+body[data-theme="light"] .address input{color:#202820}
+body[data-theme="light"] .address input::placeholder{color:#68736d}
+body[data-theme="light"] .address .search-icon,body[data-theme="light"] .address .scan{color:#202820}
+body[data-theme="light"] .shortcut{color:#202820;text-shadow:none}
+body[data-theme="light"] .shortcut i{background:linear-gradient(145deg,#fff,#f4f7f3);border:1px solid #dce5de;color:#314c3a;box-shadow:0 7px 18px rgba(32,40,32,.07)}
+body[data-theme="light"] .feature{background:rgba(255,255,255,.94);border-color:#e1e6e3;color:#202820;box-shadow:0 10px 28px rgba(32,40,32,.07)}
+body[data-theme="light"] .feature p{color:#68736d}
+body[data-theme="light"] .active-section h2{color:#202820}
+body[data-theme="light"] .panel{background:#fff;border-color:#e1e6e3;color:#202820;box-shadow:0 8px 24px rgba(32,40,32,.045)}
+body[data-theme="light"] .empty{color:#68736d}
+body[data-theme="light"] .page-title h1{color:#202820}
+body[data-theme="light"] .page-title p{color:#68736d}
+body[data-theme="light"] .item-icon{background:#f0f5f1;color:#547333}
+body[data-theme="light"] .item-info small{color:#68736d}
+body[data-theme="light"] .item-action{background:linear-gradient(135deg,#e4f2ff 0%,#b8dcff 100%);border-color:#a9cfee;color:#245b8a;box-shadow:0 3px 8px rgba(43,104,157,.08)}
+body[data-theme="light"] .search{background:#fff;border-color:#e1e6e3;color:#202820}
+body[data-theme="light"] .search::placeholder{color:#68736d}
+body[data-theme="light"] .chip{background:#fff;border-color:#e1e6e3;color:#526056}
+body[data-theme="light"] .chip.active{background:#a7e22e;color:#203323;border-color:#a7e22e}
+body[data-theme="light"] #view-menu.view.active{background:#fff;color:#202820;border-color:#e1e6e3;box-shadow:0 0 0 100vmax rgba(18,35,28,.42),0 18px 55px rgba(0,0,0,.16)}
+body[data-theme="light"] #view-menu .page-title h1,body[data-theme="light"] #view-menu .item-info strong{color:#202820}
+body[data-theme="light"] #view-menu .page-title p,body[data-theme="light"] #view-menu .item-info small{color:#68736d}
+body[data-theme="light"] #view-menu .item-icon{color:#314c3a}
+body[data-theme="light"] #view-menu .item-action{background:linear-gradient(135deg,#e4f2ff,#b8dcff);border-color:#a9cfee;color:#245b8a}
+body[data-theme="light"] #view-menu .menu-close{background:#f0f4f1;color:#202820}
+body[data-theme="light"] .settings-option{background:#fff;color:#202820;border-color:#e1e6e3}
+body[data-theme="light"] .settings-option[aria-pressed="true"]{background:#eff8d9;border-color:#91bf30}
+body[data-theme="light"] .settings-preview{background:#f8faf8;border-color:#e1e6e3}
+body[data-theme="light"] .settings-note{color:#68736d}
+body[data-theme="light"] .browser-controls{background:rgba(255,255,255,.97);border-color:#e1e6e3}
+body[data-theme="light"] .browser-controls button{color:#26352e}
+body[data-theme="light"] .browser-controls .new-control{background:linear-gradient(145deg,#d7ee75,#91bf30);color:#203323}
+body[data-theme="light"] .toast{background:#202820;color:#fff}
+body[data-theme="light"] .history-entry{color:#202820!important}
+body[data-theme="light"] .settings-section-title{color:#202820}
+body[data-theme="dark"]{color-scheme:dark}
+body[data-theme="dark"] .settings-option{background:#122e29;color:#f3f6f0}
+body[data-theme="dark"] .settings-preview{background:#0d2622}
+body[data-theme="dark"] .settings-note{color:#aebdb4}
+body[data-theme="dark"] .settings-section-title{color:#f3f6f0}
+.appearance-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:14px 0 20px}
+.appearance-option{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 8px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--text);font-weight:750}
+.appearance-option[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:#a7e22e18}
+.settings-section-title{font-size:14px;font-weight:800;margin:18px 0 5px}
+body[data-theme="light"] .page-title{margin:24px 3px 20px}
+body[data-theme="light"] .panel{padding:19px}
+body[data-theme="light"] .row{gap:13px}
+body[data-theme="light"] .row+.row{margin-top:14px}
+body[data-theme="light"] .active-section{margin:24px 0 26px}
+body[data-theme="light"] .shortcut i{width:66px;height:66px}
+
 </style>
 </head>
 <body>
@@ -200,7 +264,7 @@ body[data-ui-font="large"] #view-tabs .item-info small{font-size:11px}
 <section id="view-koleksi" class="view"><div class="page-title"><h1>Koleksi</h1><p>Bookmark yang kamu simpan.</p></div><input class="search" id="bookmarkSearch" placeholder="Cari bookmark..." aria-label="Cari bookmark"><div class="panel" id="bookmarkList"><div class="empty">Belum ada bookmark tersimpan.</div></div></section>
 <section id="view-riwayat" class="view"><div class="page-title"><h1>Riwayat</h1><p>Jejak halaman yang dibuka pada prototype.</p></div><div class="row history-toolbar" style="justify-content:space-between"><strong>Terakhir dibuka</strong><button class="item-action" id="clearHistory">Hapus riwayat</button></div><div class="panel" id="historyList"><div class="empty">Belum ada riwayat.</div></div></section>
 <section id="view-tabs" class="view"><div class="page-title"><h1>Tab</h1><p>Kelola halaman yang sedang terbuka.</p></div><div class="panel" id="tabsList"></div><button class="item-action" id="addTab" style="margin-top:12px">＋ Tab Baru</button></section>
-<section id="view-settings" class="view"><div class="page-title"><h1>Pengaturan</h1><p>Atur kenyamanan KLIKRA Browser.</p></div><div class="panel"><div class="row"><div class="item-icon">Aa</div><div class="item-info"><strong>Ukuran Font Antarmuka</strong><small>Pilih ukuran teks menu dan navigasi.</small></div></div><div class="settings-options" role="group" aria-label="Ukuran font antarmuka"><button class="settings-option" data-font="small" aria-pressed="false">Kecil</button><button class="settings-option" data-font="normal" aria-pressed="true">Normal</button><button class="settings-option" data-font="large" aria-pressed="false">Besar</button></div><div class="settings-preview"><strong id="fontPreviewTitle">Pratinjau teks</strong><p id="fontPreviewBody">Jelajahi dengan ukuran tulisan yang nyaman dibaca.</p></div><p class="settings-note">Pilihan ini mengatur antarmuka browser, bukan ukuran teks situs web. Pengaturan tersimpan pada browser perangkat ini.</p></div><button class="item-action" id="settingsBack" style="margin-top:12px">← Kembali ke Menu Cepat</button></section>
+<section id="view-settings" class="view"><div class="page-title"><h1>Pengaturan</h1><p>Atur kenyamanan KLIKRA Browser.</p></div><div class="panel"><div class="settings-section-title">Mode tampilan</div><div class="appearance-options" role="group" aria-label="Mode tampilan"><button class="appearance-option" data-theme-choice="light" aria-pressed="false">☀️ Terang</button><button class="appearance-option" data-theme-choice="dark" aria-pressed="true">☾ Gelap</button></div><div class="row"><div class="item-icon">Aa</div><div class="item-info"><strong>Ukuran Font Antarmuka</strong><small>Pilih ukuran teks menu dan navigasi.</small></div></div><div class="settings-options" role="group" aria-label="Ukuran font antarmuka"><button class="settings-option" data-font="small" aria-pressed="false">Kecil</button><button class="settings-option" data-font="normal" aria-pressed="true">Normal</button><button class="settings-option" data-font="large" aria-pressed="false">Besar</button></div><div class="settings-preview"><strong id="fontPreviewTitle">Pratinjau teks</strong><p id="fontPreviewBody">Jelajahi dengan ukuran tulisan yang nyaman dibaca.</p></div><p class="settings-note">Mode warna dan ukuran font mengatur antarmuka browser, bukan tampilan situs web. Pilihan tersimpan pada browser perangkat ini.</p></div><button class="item-action" id="settingsBack" style="margin-top:12px">← Kembali ke Menu Cepat</button></section>
  <section id="view-menu" class="view"><div class="page-title"><div><h1>Menu Cepat</h1><p>Kontrol browser</p></div><button class="menu-close" id="closeMenu" aria-label="Tutup menu">×</button></div><div class="panel">
 <div class="row"><div class="item-icon">＋</div><div class="item-info"><strong>Tab Baru</strong></div><button class="item-action" data-menu="newtab">Buka</button></div>
 <div class="row"><div class="item-icon">◉</div><div class="item-info"><strong>Tab Samaran</strong><small>Demo tampilan — belum ada mode privat terisolasi</small></div></div>
@@ -232,7 +296,7 @@ function view(v){document.querySelectorAll('.view').forEach(x=>x.classList.toggl
 document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>view(b.dataset.go)));
 function resolve(s){s=s.trim();if(!s)return '';if(/^https?:\/\//i.test(s))return s;if(/^([\w-]+\.)+[a-z]{2,}([/:?#].*)?$/i.test(s))return 'https://'+s;return 'https://www.google.com/search?q='+encodeURIComponent(s)}
 function navigate(){const raw=$('#addressInput').value.trim(),url=resolve(raw);if(!url){say('Masukkan alamat atau kata pencarian.');return}const t=cur();t.url=url;t.title=raw;historyItems.unshift({url,title:raw,time:new Date().toLocaleString('id-ID')});historyItems=historyItems.slice(0,100);persist();renderActive();$('#addressInput').value='';say('Alamat dicatat. Situs belum dimuat di dalam prototype.')}
-let uiFont='normal';try{uiFont=localStorage.getItem(key+':uiFont')||'normal'}catch(e){}function applyFont(){document.body.dataset.uiFont=uiFont;document.querySelectorAll('[data-font]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.font===uiFont)))}function chooseFont(v){if(!['small','normal','large'].includes(v))return;uiFont=v;try{localStorage.setItem(key+':uiFont',uiFont)}catch(e){say('Pengaturan tidak dapat disimpan pada perangkat ini.')}applyFont();say('Ukuran font diperbarui.')}document.querySelectorAll('[data-font]').forEach(b=>b.addEventListener('click',()=>chooseFont(b.dataset.font)));$('#settingsBack').addEventListener('click',()=>view('menu'));applyFont();
+let uiTheme='dark';try{uiTheme=localStorage.getItem(key+':theme')||'dark'}catch(e){}function applyTheme(){document.body.dataset.theme=uiTheme;document.querySelectorAll('[data-theme-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.themeChoice===uiTheme)));const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=uiTheme==='light'?'#ffffff':'#102d2a'}function chooseTheme(v){if(!['light','dark'].includes(v))return;uiTheme=v;try{localStorage.setItem(key+':theme',uiTheme)}catch(e){say('Mode tampilan tidak dapat disimpan.')}applyTheme();say(uiTheme==='light'?'Mode terang diaktifkan.':'Mode gelap diaktifkan.')}document.querySelectorAll('[data-theme-choice]').forEach(b=>b.addEventListener('click',()=>chooseTheme(b.dataset.themeChoice)));applyTheme();let uiFont='normal';try{uiFont=localStorage.getItem(key+':uiFont')||'normal'}catch(e){}function applyFont(){document.body.dataset.uiFont=uiFont;document.querySelectorAll('[data-font]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.font===uiFont)))}function chooseFont(v){if(!['small','normal','large'].includes(v))return;uiFont=v;try{localStorage.setItem(key+':uiFont',uiFont)}catch(e){say('Pengaturan tidak dapat disimpan pada perangkat ini.')}applyFont();say('Ukuran font diperbarui.')}document.querySelectorAll('[data-font]').forEach(b=>b.addEventListener('click',()=>chooseFont(b.dataset.font)));$('#settingsBack').addEventListener('click',()=>view('menu'));applyFont();
  function renderActive(){const t=cur();$('#tabBadge').textContent=tabs.length;$('#tabCountControl').textContent=tabs.length;$('#activePage').innerHTML=t.url?'<div class="row"><div class="item-icon">◎</div><div class="item-info"><strong>'+esc(t.title||t.url)+'</strong><small>'+esc(t.url)+'</small></div><button class="item-action" id="openExternal">Buka ↗</button><button class="item-action" id="saveActive">☆</button></div><p class="empty">Prototype belum memuat situs di dalam aplikasi. Buka meneruskan alamat ke browser perangkat.</p>':'<div class="empty">Belum ada halaman yang dibuka.</div>';$('#openExternal')?.addEventListener('click',()=>window.open(t.url,'_blank','noopener'));$('#saveActive')?.addEventListener('click',saveCurrent)}
 function saveCurrent(){const t=cur();if(!t.url){say('Belum ada halaman untuk disimpan.');return}if(bookmarks.some(b=>b.url===t.url)){say('Bookmark sudah tersimpan.');return}bookmarks.unshift({url:t.url,title:t.title||t.url});persist();renderBookmarks();say('Bookmark tersimpan.')}
 function renderBookmarks(){const q=($('#bookmarkSearch')?.value||'').toLowerCase(),items=bookmarks.filter(b=>(b.title+' '+b.url).toLowerCase().includes(q));$('#bookmarkList').innerHTML=items.length?items.map((b,i)=>'<div class="row"><div class="item-icon">♧</div><div class="item-info"><strong>'+esc(b.title)+'</strong><small>'+esc(b.url)+'</small></div><button class="item-action" data-open="'+i+'">Buka</button><button class="item-action" data-del="'+i+'">Hapus</button></div>').join(''):'<div class="empty">Belum ada bookmark yang cocok.</div>';$('#bookmarkList').querySelectorAll('[data-open]').forEach(x=>x.addEventListener('click',()=>openSaved(items[+x.dataset.open])));$('#bookmarkList').querySelectorAll('[data-del]').forEach(x=>x.addEventListener('click',()=>{const b=items[+x.dataset.del];bookmarks=bookmarks.filter(y=>y.url!==b.url);persist();renderBookmarks();say('Bookmark dihapus.')}))}
