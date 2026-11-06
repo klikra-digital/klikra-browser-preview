@@ -244,7 +244,29 @@ body[data-theme="light"] .active-section{margin:24px 0 26px}
 body[data-theme="light"] .shortcut i{width:66px;height:66px}
 .shortcut i svg{width:27px;height:27px;stroke:currentColor;fill:none;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
 
-\n/* KLIKRA DIMENSION GATEWAY 001 — Portal Light */\n.gateway-card{margin:0 0 18px;padding:18px!important;border-radius:22px!important;background:linear-gradient(145deg,#183a32,#102a25)!important;border:1px solid #66805a!important;color:#f5f8f1!important}\n.gateway-card .item-icon{background:#a7e22e22!important;color:#c5e84f!important;font-size:23px}\n.gateway-card .item-info strong{font-size:15px!important;color:inherit}\n.gateway-card .item-info small{white-space:normal;line-height:1.45;color:#d0ded3!important}\n.gateway-button{width:100%;margin-top:17px;min-height:50px;border:1px solid #b5df4b;border-radius:15px;background:linear-gradient(110deg,#d8f18a,#a7e22e 65%,#8ecb2c);color:#1d321d;font-weight:800;box-shadow:0 7px 18px #061b1840;display:flex;align-items:center;justify-content:center;gap:9px}\n.gateway-button span{font-size:19px}\n.gateway-caption{margin:10px 0 0;text-align:center;font-size:11px;color:#d3e1d2}\nbody[data-theme="light"] .gateway-card{background:linear-gradient(145deg,#fff,#f5f8f4)!important;border-color:#dce6d8!important;color:#202820!important}\nbody[data-theme="light"] .gateway-card .item-info small,body[data-theme="light"] .gateway-caption{color:#68736d!important}\n#portalLight{position:fixed;z-index:30;inset:0;display:grid;place-items:center;overflow:hidden;background:rgba(255,255,255,0);opacity:0;visibility:hidden;pointer-events:none}\n#portalLight.active{visibility:visible;pointer-events:auto;animation:portal-screen-glow 1.08s ease-in forwards}\n#portalLight:before{content:"";position:absolute;width:22vmin;height:22vmin;border-radius:50%;background:radial-gradient(circle,#fff 0 17%,#f5ffd9 36%,rgba(167,226,46,.7) 52%,rgba(255,255,255,0) 72%);transform:scale(.05);opacity:0}\n#portalLight.active:before{animation:portal-core-bloom 1.08s cubic-bezier(.16,.72,.24,1) forwards}\n.portal-light-label{position:relative;z-index:1;color:#263522;font-size:14px;font-weight:800;letter-spacing:.08em;text-align:center;opacity:0;text-shadow:0 1px 12px #fff}\n#portalLight.active .portal-light-label{animation:portal-label-in .55s .35s ease forwards}\n.portal-skip{position:absolute;z-index:2;right:18px;top:max(18px,env(safe-area-inset-top));padding:10px 14px;border:1px solid #d8e7bd;border-radius:999px;background:#ffffffdf;color:#273522;font-size:12px;font-weight:700}\n@keyframes portal-screen-glow{0%{background:rgba(255,255,255,0)}45%{background:rgba(255,255,255,.92)}100%{background:#fff;opacity:1}}\n@keyframes portal-core-bloom{0%{transform:scale(.05);opacity:0}28%{opacity:1}100%{transform:scale(15);opacity:.95}}\n@keyframes portal-label-in{to{opacity:1}}\n@media(prefers-reduced-motion:reduce){#portalLight.active,#portalLight.active:before,#portalLight.active .portal-light-label{animation:none!important}#portalLight.active{background:#fff;opacity:1}#portalLight.active:before{transform:scale(15);opacity:1}#portalLight.active .portal-light-label{opacity:1}}\n</style>
+
+/* KLIKRA DIMENSION GATEWAY 001 — Portal Light */
+.gateway-card{margin:0 0 18px;padding:18px!important;border-radius:22px!important;background:linear-gradient(145deg,#183a32,#102a25)!important;border:1px solid #66805a!important;color:#f5f8f1!important}
+.gateway-card .item-icon{background:#a7e22e22!important;color:#c5e84f!important;font-size:23px}
+.gateway-card .item-info strong{font-size:15px!important;color:inherit}
+.gateway-card .item-info small{white-space:normal;line-height:1.45;color:#d0ded3!important}
+.gateway-button{width:100%;margin-top:17px;min-height:50px;border:1px solid #b5df4b;border-radius:15px;background:linear-gradient(110deg,#d8f18a,#a7e22e 65%,#8ecb2c);color:#1d321d;font-weight:800;box-shadow:0 7px 18px #061b1840;display:flex;align-items:center;justify-content:center;gap:9px}
+.gateway-button span{font-size:19px}
+.gateway-caption{margin:10px 0 0;text-align:center;font-size:11px;color:#d3e1d2}
+body[data-theme="light"] .gateway-card{background:linear-gradient(145deg,#fff,#f5f8f4)!important;border-color:#dce6d8!important;color:#202820!important}
+body[data-theme="light"] .gateway-card .item-info small,body[data-theme="light"] .gateway-caption{color:#68736d!important}
+#portalLight{position:fixed;z-index:30;inset:0;display:grid;place-items:center;overflow:hidden;background:rgba(255,255,255,0);opacity:0;visibility:hidden;pointer-events:none}
+#portalLight.active{visibility:visible;pointer-events:auto;animation:portal-screen-glow 1.08s ease-in forwards}
+#portalLight:before{content:"";position:absolute;width:22vmin;height:22vmin;border-radius:50%;background:radial-gradient(circle,#fff 0 17%,#f5ffd9 36%,rgba(167,226,46,.7) 52%,rgba(255,255,255,0) 72%);transform:scale(.05);opacity:0}
+#portalLight.active:before{animation:portal-core-bloom 1.08s cubic-bezier(.16,.72,.24,1) forwards}
+.portal-light-label{position:relative;z-index:1;color:#263522;font-size:14px;font-weight:800;letter-spacing:.08em;text-align:center;opacity:0;text-shadow:0 1px 12px #fff}
+#portalLight.active .portal-light-label{animation:portal-label-in .55s .35s ease forwards}
+.portal-skip{position:absolute;z-index:2;right:18px;top:max(18px,env(safe-area-inset-top));padding:10px 14px;border:1px solid #d8e7bd;border-radius:999px;background:#ffffffdf;color:#273522;font-size:12px;font-weight:700}
+@keyframes portal-screen-glow{0%{background:rgba(255,255,255,0)}45%{background:rgba(255,255,255,.92)}100%{background:#fff;opacity:1}}
+@keyframes portal-core-bloom{0%{transform:scale(.05);opacity:0}28%{opacity:1}100%{transform:scale(15);opacity:.95}}
+@keyframes portal-label-in{to{opacity:1}}
+@media(prefers-reduced-motion:reduce){#portalLight.active,#portalLight.active:before,#portalLight.active .portal-light-label{animation:none!important}#portalLight.active{background:#fff;opacity:1}#portalLight.active:before{transform:scale(15);opacity:1}#portalLight.active .portal-light-label{opacity:1}}
+</style>
 </head>
 <body>
 <div class="app">
@@ -289,7 +311,8 @@ body[data-theme="light"] .shortcut i{width:66px;height:66px}
 <button class="tab-count" id="tabCountControl" aria-label="Jumlah tab">1</button>
 <button class="menu-control" id="menuControl" aria-label="Menu cepat">⋮</button>
 </nav>
-<div id="portalLight" aria-hidden="true"><button class="portal-skip" id="portalSkip" type="button">Lewati ✕</button><div class="portal-light-label">SELAMAT DATANG DI KLIKRA</div></div>\n<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div id="portalLight" aria-hidden="true"><button class="portal-skip" id="portalSkip" type="button">Lewati ✕</button><div class="portal-light-label">SELAMAT DATANG DI KLIKRA</div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
 const $=s=>document.querySelector(s),key='klikra-browser-ui002';let bookmarks=[],historyItems=[],tabs=[{id:1,url:'',title:'Tab baru'}],activeTab=1,nextId=2;
 try{bookmarks=JSON.parse(localStorage.getItem(key+':bookmarks')||'[]');historyItems=JSON.parse(localStorage.getItem(key+':history')||'[]')}catch(e){}
