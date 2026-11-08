@@ -258,6 +258,32 @@ body[data-theme="light"] .item-icon{background:linear-gradient(145deg,#f7fbef,#e
 .feature-icon{display:grid;place-items:center;flex:none;width:28px;height:28px;color:var(--lime)}
 .feature-icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .shortcut i svg{stroke-width:1.85}
+/* Home feature card — restore generous icon-to-copy spacing */
+.feature{
+  gap:26px!important;
+  padding:22px 24px!important;
+  align-items:flex-start;
+}
+.feature-icon{
+  display:grid!important;
+  place-items:center;
+  flex:0 0 48px!important;
+  width:48px!important;
+  height:48px!important;
+  margin:2px 0 0!important;
+  border-radius:16px!important;
+  background:linear-gradient(145deg,#dff59a 0%,#b6df54 55%,#91bf30 100%)!important;
+  border:1px solid rgba(130,174,43,.42);
+  color:#29451f!important;
+  box-shadow:0 6px 16px rgba(87,125,37,.20),inset 0 1px 0 rgba(255,255,255,.65);
+}
+.feature-icon svg{width:25px!important;height:25px!important}
+.feature>div{min-width:0;flex:1}
+@media(max-width:380px){
+  .feature{gap:20px!important;padding:20px!important}
+  .feature-icon{flex-basis:44px!important;width:44px!important;height:44px!important}
+}
+
 /* KLIKRA DIMENSION GATEWAY 001 — Portal Light */
 .gateway-card{margin:0 0 18px;padding:18px!important;border-radius:22px!important;background:linear-gradient(145deg,#183a32,#102a25)!important;border:1px solid #66805a!important;color:#f5f8f1!important}
 .gateway-card .item-icon{background:#a7e22e22!important;color:#c5e84f!important;font-size:23px}
