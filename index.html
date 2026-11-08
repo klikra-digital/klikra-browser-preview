@@ -378,6 +378,15 @@ body[data-theme="light"] .gateway-card .item-info small,body[data-theme="light"]
 @keyframes portal-core-bloom{0%{transform:scale(.05);opacity:0}28%{opacity:1}100%{transform:scale(15);opacity:.95}}
 @keyframes portal-label-in{to{opacity:1}}
 @media(prefers-reduced-motion:reduce){#portalLight.active,#portalLight.active:before,#portalLight.active .portal-light-label{animation:none!important}#portalLight.active{background:#fff;opacity:1}#portalLight.active:before{transform:scale(15);opacity:1}#portalLight.active .portal-light-label{opacity:1}}
+
+/* Build 010 — raise the four home shortcut icons slightly */
+.home-hero .shortcuts{top:61.5%}
+@media(min-width:600px){
+  .home-hero .shortcuts{top:61%}
+}
+@media(max-height:700px){
+  .home-hero .shortcuts{top:58.5%}
+}
 </style>
 </head>
 <body>
