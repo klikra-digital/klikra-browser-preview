@@ -379,6 +379,11 @@ body[data-theme="light"] .gateway-card .item-info small,body[data-theme="light"]
 @keyframes portal-label-in{to{opacity:1}}
 @media(prefers-reduced-motion:reduce){#portalLight.active,#portalLight.active:before,#portalLight.active .portal-light-label{animation:none!important}#portalLight.active{background:#fff;opacity:1}#portalLight.active:before{transform:scale(15);opacity:1}#portalLight.active .portal-light-label{opacity:1}}
 
+/* Build 011 — lift Active Page section while preserving generous card whitespace */
+.active-section{margin-top:12px}
+.active-section .panel{min-height:148px;display:flex;align-items:center;justify-content:center}
+.active-section .panel>.empty{padding:24px 18px}
+
 /* Build 010 — raise the four home shortcut icons slightly */
 .home-hero .shortcuts{top:61.5%}
 @media(min-width:600px){
