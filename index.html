@@ -284,6 +284,67 @@ body[data-theme="light"] .item-icon{background:linear-gradient(145deg,#f7fbef,#e
   .feature-icon{flex-basis:44px!important;width:44px!important;height:44px!important}
 }
 
+/* Home visual polish — premium shortcuts, rhythm, safe content area, toolbar */
+body[data-theme="light"] .shortcut i{
+  width:64px;
+  height:64px;
+  margin-bottom:11px;
+  border-radius:22px;
+  background:linear-gradient(145deg,#ffffff 0%,#f5f8f2 58%,#eaf1e7 100%);
+  border:1px solid #d9e4d9;
+  color:#294b38;
+  box-shadow:0 8px 20px rgba(35,65,43,.10),inset 0 1px 0 rgba(255,255,255,.95);
+}
+.shortcut i svg{
+  width:29px;
+  height:29px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.85;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.shortcuts{row-gap:0}
+.shortcut span{display:block;line-height:1.25;letter-spacing:.05px}
+.home-hero .shortcuts{top:64.5%}
+.home-hero .feature{bottom:4.5%}
+.active-section{margin:22px 0 24px}
+main{padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+.browser-controls{
+  height:78px;
+  padding:8px 16px max(9px,env(safe-area-inset-bottom));
+  gap:8px;
+  background:rgba(250,251,248,.97);
+  border-top:1px solid #dce4dc;
+  box-shadow:0 -7px 22px rgba(24,48,35,.13);
+  backdrop-filter:blur(16px);
+}
+.browser-controls button{
+  width:17%;
+  height:50px;
+  border-radius:17px;
+  transition:background .18s ease,transform .18s ease;
+}
+.browser-controls button:active{transform:scale(.96);background:rgba(145,191,48,.10)}
+.browser-controls .new-control{
+  width:54px;
+  height:54px;
+  flex:0 0 54px;
+  box-shadow:0 6px 16px rgba(48,76,23,.22),inset 0 1px 0 rgba(255,255,255,.55);
+}
+@media(min-width:600px){
+  main{padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))}
+  .home-hero .shortcuts{top:64%}
+  .home-hero .feature{bottom:5%}
+  .browser-controls{height:82px;width:min(760px,100%);border-radius:16px 16px 0 0}
+}
+@media(max-width:380px){
+  body[data-theme="light"] .shortcut i{width:58px;height:58px;border-radius:19px}
+  .shortcut i svg{width:26px;height:26px}
+  .browser-controls{gap:3px;padding-left:9px;padding-right:9px}
+  .browser-controls .new-control{width:50px;height:50px;flex-basis:50px}
+}
+
 /* KLIKRA DIMENSION GATEWAY 001 — Portal Light */
 .gateway-card{margin:0 0 18px;padding:18px!important;border-radius:22px!important;background:linear-gradient(145deg,#183a32,#102a25)!important;border:1px solid #66805a!important;color:#f5f8f1!important}
 .gateway-card .item-icon{background:#a7e22e22!important;color:#c5e84f!important;font-size:23px}
