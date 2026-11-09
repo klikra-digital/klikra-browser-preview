@@ -482,6 +482,71 @@ body[data-theme="light"] .gateway-card .item-info small,body[data-theme="light"]
 .camera-back,.camera-top-tools button,.camera-action,.focus-mode{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 @media(max-width:380px){.camera-action .action-icon{width:49px;height:49px}.camera-action .action-icon svg{width:27px;height:27px}.camera-action.capture-button .action-icon{width:63px;height:63px}.camera-action{min-height:91px}.camera-focus-rail{right:7px}.focus-mode{width:48px;min-height:52px}}
 
+
+/* BUILD 015 — CAMERA-FIRST TRANSLUCENT PANELS
+   Panel surfaces use ~30% fill (about 70% transparency).
+   Text, SVG icons, focus indicators and active controls retain full opacity. */
+.camera-topbar{
+  background:linear-gradient(180deg,rgba(3,21,15,.30),rgba(3,21,15,0))!important;
+  -webkit-backdrop-filter:blur(3px);
+  backdrop-filter:blur(3px);
+}
+.camera-back,.camera-top-tools button{
+  background:rgba(10,43,32,.30)!important;
+  border-color:rgba(217,245,210,.42)!important;
+  -webkit-backdrop-filter:blur(5px);
+  backdrop-filter:blur(5px);
+}
+.camera-focus-rail{
+  background:rgba(6,35,29,.30)!important;
+  border-color:rgba(225,244,212,.34)!important;
+  -webkit-backdrop-filter:blur(5px);
+  backdrop-filter:blur(5px);
+}
+.focus-mode{
+  background:rgba(24,59,48,.30)!important;
+  border-color:rgba(214,234,211,.36)!important;
+  color:#eff9e9!important;
+}
+.focus-mode.active{
+  background:#b8e94b!important;
+  color:#10251b!important;
+  border-color:#eaffb5!important;
+}
+.camera-zoom{
+  background:rgba(9,37,30,.30)!important;
+  border-color:rgba(216,239,206,.42)!important;
+  -webkit-backdrop-filter:blur(5px);
+  backdrop-filter:blur(5px);
+}
+.camera-zoom button{background:transparent!important;color:#f4f8ed!important}
+.camera-zoom button.active{background:#b9e94c!important;color:#17301e!important}
+.camera-bottom{
+  background:linear-gradient(180deg,rgba(7,29,24,.30),rgba(6,26,22,.34) 22%)!important;
+  border-top-color:rgba(216,239,206,.34)!important;
+  -webkit-backdrop-filter:blur(7px);
+  backdrop-filter:blur(7px);
+}
+.camera-action .action-icon{
+  background:rgba(11,42,33,.30)!important;
+  border-color:rgba(217,239,207,.48)!important;
+  box-shadow:inset 0 1px 4px rgba(255,255,255,.10),0 3px 10px rgba(0,0,0,.16)!important;
+}
+.camera-action.capture-button .action-icon{
+  background:linear-gradient(145deg,#fffef5,#e9f1e1)!important;
+  border-color:#a7e22e!important;
+}
+.camera-hint{
+  background:rgba(6,38,30,.32)!important;
+  border-color:rgba(213,241,209,.38)!important;
+  -webkit-backdrop-filter:blur(5px);
+  backdrop-filter:blur(5px);
+}
+@media(prefers-reduced-transparency:reduce){
+  .camera-topbar{background:linear-gradient(180deg,rgba(3,21,15,.72),transparent)!important}
+  .camera-focus-rail,.camera-zoom,.camera-bottom,.camera-hint{background-color:rgba(6,29,24,.72)!important}
+}
+
 </style>
 </head>
 <body>
